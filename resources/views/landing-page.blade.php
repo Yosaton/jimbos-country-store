@@ -1,32 +1,14 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layout')
 
-        <title>Laravel Ecommerce Example</title>
+@section('title', 'Shopping Cart')
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Montserrat%7CRoboto:300,400,700" rel="stylesheet">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+@section('extra-css')
 
-        <!-- Styles -->
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
+@endsection
 
-    </head>
-    <body>
+@section('content')
+
         <header class="with-background">
-            <div class="top-nav container">
-                <div class="logo">Laravel Ecommerce</div>
-                <ul>
-                    <li><a href="#">Shop</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Cart <span class="cart-count"><span>3</span></span></a></li>
-                </ul>
-            </div> <!-- end top-nav -->
             <div class="hero container">
                 <div class="hero-copy">
                     <h1>Laravel Ecommerce Demo</h1>
@@ -65,50 +47,17 @@
                 </div> --}}
 
                 <div class="products text-center">
-                    <div class="product">
-                        <a href="#"><img src="/img/macbook-pro.png" alt="product"></a>
-                        <a href="#"><div class="product-name">MacBook Pro</div></a>
-                        <div class="product-price">$2499.99</div>
-                    </div>
-                    <div class="product">
-                        <a href="#"><img src="/img/macbook-pro.png" alt="product"></a>
-                        <a href="#"><div class="product-name">MacBook Pro</div></a>
-                        <div class="product-price">$2499.99</div>
-                    </div>
-                    <div class="product">
-                        <a href="#"><img src="/img/macbook-pro.png" alt="product"></a>
-                        <a href="#"><div class="product-name">MacBook Pro</div></a>
-                        <div class="product-price">$2499.99</div>
-                    </div>
-                    <div class="product">
-                        <a href="#"><img src="/img/macbook-pro.png" alt="product"></a>
-                        <a href="#"><div class="product-name">MacBook Pro</div></a>
-                        <div class="product-price">$2499.99</div>
-                    </div>
-                    <div class="product">
-                        <a href="#"><img src="/img/macbook-pro.png" alt="product"></a>
-                        <a href="#"><div class="product-name">MacBook Pro</div></a>
-                        <div class="product-price">$2499.99</div>
-                    </div>
-                    <div class="product">
-                        <a href="#"><img src="/img/macbook-pro.png" alt="product"></a>
-                        <a href="#"><div class="product-name">MacBook Pro</div></a>
-                        <div class="product-price">$2499.99</div>
-                    </div>
-                    <div class="product">
-                        <a href="#"><img src="/img/macbook-pro.png" alt="product"></a>
-                        <a href="#"><div class="product-name">MacBook Pro</div></a>
-                        <div class="product-price">$2499.99</div>
-                    </div>
-                    <div class="product">
-                        <a href="#"><img src="/img/macbook-pro.png" alt="product"></a>
-                        <a href="#"><div class="product-name">MacBook Pro</div></a>
-                        <div class="product-price">$2499.99</div>
-                    </div>
+                    @foreach($products as $product)
+                        <div class="product">
+                            <a href="{{route('shop.show', $product->slug)}}"><img src={{asset('img/products/'.$product->slug.'.jpg')}} alt="product"></a>
+                            <a href="{{route('shop.show', $product->slug)}}"><div class="product-name">{{$product->name}}</div></a>
+                            <div class="product-price">{{$product->presentPrice()}}</div>
+                        </div>
+                    @endforeach
                 </div> <!-- end products -->
 
                 <div class="text-center button-container">
-                    <a href="#" class="button">View more products</a>
+                 <a href="{{route('shop.index')}}" class="button">View more products</a>
                 </div>
 
             </div> <!-- end container -->
@@ -143,6 +92,7 @@
 
         @include('partials.footer')
 
+    @endsection
 
     </body>
 </html>
