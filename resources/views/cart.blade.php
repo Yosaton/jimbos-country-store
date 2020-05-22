@@ -7,7 +7,6 @@
 @endsection
 
 @section('content')
-
     <div class="breadcrumbs">
         <div class="container">
             <a href="/">Home</a>
@@ -73,7 +72,7 @@
                                         <option>5</option>
                                     </select>
                                 </div>
-                                <div>${{$item->model->price}}.99</div>
+                                <div>${{$item->model->price}}</div>
                             </div>
                         </div> <!-- end cart-table-row -->
                     @endforeach
@@ -117,8 +116,8 @@
             </div> <!-- end cart-totals -->
 
             <div class="cart-buttons">
-                <a href="#" class="button">Continue Shopping</a>
-                <a href="#" class="button-primary">Proceed to Checkout</a>
+                <a href="{{route('shop.index')}}" class="button">Continue Shopping</a>
+                <a href="{{route('checkout.index')}}" class="button-primary">Proceed to Checkout</a>
             </div>
 
 
@@ -157,7 +156,7 @@
                                         <option>5</option>
                                     </select>
                                 </div> --}}
-                                <div>${{$item->price}}.99</div>
+                                <div>${{$item->price}}</div>
                             </div>
                         </div> <!-- end cart-table-row -->
                     @endforeach

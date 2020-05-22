@@ -9,6 +9,7 @@
   "type": "project",
   "require": {
     "php": ">=7.0.0",
+    "cartalyst/stripe-laravel": "7.0.x",
     "fideloper/proxy": "~3.3",
     "hardevine/shoppingcart": "^2.8",
     "laravel/framework": "5.5.*",
