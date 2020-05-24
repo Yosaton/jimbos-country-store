@@ -184,7 +184,6 @@
     <script>
         (function(){
             const classname = document.querySelectorAll('.quantity');
-
             Array.from(classname).forEach(function(element){
                 element.addEventListener('change', function() {
                     const id = element.getAttribute('data-id');
