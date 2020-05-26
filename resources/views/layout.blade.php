@@ -24,14 +24,14 @@
     </head>
 
 
-<body class="@yield('body-class', '')">
-    @include('partials.nav')
+    <body class="@yield('body-class', '')">
+        @include('partials.nav')
 
-    @yield('content')
+        @yield('content')
 
-    @include('partials.footer')
+        @include('partials.footer')
 
-    @yield('extra-js')
+        @yield('extra-js')
 
-</body>
+    </body>
 </html>

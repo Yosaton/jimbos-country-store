@@ -89,9 +89,6 @@
                 </div>
             </div> <!-- end container -->
         </div> <!-- end blog-section -->
-
-        @include('partials.footer')
-
     @endsection
 
     </body>

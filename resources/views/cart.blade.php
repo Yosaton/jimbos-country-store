@@ -80,23 +80,13 @@
                     @endforeach
                 </div> <!-- end cart-table -->
             @else
-
+                <br>
                 <h3> No items in Cart </h3>
                 <div class="spacer"></div>
                 <a href="{{route('shop.index')}}" class="button">Continue Shopping</a>
                 <div class="spacer"></div>
             
             @endif
-
-
-            <a href="#" class="have-code">Have a Code?</a>
-
-            <div class="have-code-container">
-                <form action="#">
-                    <input type="text">
-                    <button type="submit" class="button button-plain">Apply</button>
-                </form>
-            </div> <!-- end have-code-container -->
 
             <div class="cart-totals">
                 <div class="cart-totals-left">
@@ -184,6 +174,7 @@
     <script>
         (function(){
             const classname = document.querySelectorAll('.quantity');
+
             Array.from(classname).forEach(function(element){
                 element.addEventListener('change', function() {
                     const id = element.getAttribute('data-id');

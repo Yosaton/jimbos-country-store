@@ -17,7 +17,12 @@ class CheckoutController extends Controller
      */
     public function index()
     {
-        return view('checkout');
+        return view('checkout')->with([
+            'discount' => $this->getNumbers()->get('discount'),
+            'newSubtotal' => $this->getNumbers()->get('newSubtotal'),
+            'newTax' => $this->getNumbers()->get('newTax'),
+            'newTotal' => $this->getNumbers()->get('newTotal'),
+        ]);
     }
 
     /**
@@ -45,7 +50,7 @@ class CheckoutController extends Controller
 
         try{
             $charge = Stripe::charges()->create([
-                'amount'=> Cart::total(),
+                'amount'=> $this->getNumbers()->get('newTotal'),
                 'currency' => 'USD',
                 'source' =>$request->stripeToken,
                 'description' => 'Order',
@@ -54,11 +59,13 @@ class CheckoutController extends Controller
                     //Change to Order ID after we start using DB
                     'contents' => $contents,
                     'quantity' => Cart::instance('default')->count(),
+                    'discount' => collect(session()->get('coupon'))->toJson(),
                 ],
 
             ]);
 
             Cart::instance('default')->destroy();
+            session()->forget('coupon');
             return redirect()->route('confirmation.index')->with('success_message', 'Thank you! Your payment has been successfully accepted!');
         } catch(CardErrorException $e){
             return back()->withErrors('Error! '. $e->getMessage());
@@ -66,48 +73,19 @@ class CheckoutController extends Controller
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        // return view('thankyou');
-    }
+    private function getNumbers(){
+        $tax = config('cart.tax')/100;
+        $discount = session()->get('coupon')['discount'] ?? 0;
+        $newSubtotal = (Cart::subtotal() - $discount);
+        $newTax = number_format($newSubtotal*$tax, 2);
+        $newTotal = $newSubtotal + $newTax;
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        return collect([
+            'tax' => $tax,
+            'discount' => $discount,
+            'newSubtotal' => $newSubtotal,
+            'newTax' => $newTax,
+            'newTotal' => $newTotal,
+        ]);
     }
 }

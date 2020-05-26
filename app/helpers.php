@@ -4,7 +4,7 @@ use Carbon\Carbon;
 
 // function presentPrice($price)
 // {
-//     return number_format('$%i', $price/100);
+//     return number_format('$%i', $price);
 
 // }
 
