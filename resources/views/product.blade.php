@@ -14,7 +14,7 @@
             <i class="fa fa-chevron-right breadcrumb-separator"></i>
             <a href="{{route('shop.index')}}">Shop</a>
             <i class="fa fa-chevron-right breadcrumb-separator"></i>
-            <span>Macbook Pro</span>
+            <span>{{$product->name}}</span>
         </div>
     </div> <!-- end breadcrumbs -->
 

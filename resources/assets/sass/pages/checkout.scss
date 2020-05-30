@@ -36,7 +36,7 @@ h1.checkout-heading {
     }
 
     .checkout-table-row-left {
-      width: 75%;
+      // width: 75%;
     }
 
     .checkout-table-row-right {
@@ -46,6 +46,8 @@ h1.checkout-heading {
 
     .checkout-table-img {
       max-height: 60px;
+      max-width: 60px;
+      margin-right: 50px;
     }
 
     .checkout-table-description {

@@ -7,6 +7,7 @@
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width: 992px) {
+
   header.with-background,
   header {
     .top-nav {
@@ -73,11 +74,21 @@
     text-align: center;
   }
 
+  .about-section {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
   .products-section {
     grid-template-columns: 1fr;
 
     .sidebar {
       text-align: center;
+    }
+
+    .products-header {
+      flex-direction: column;
+      margin-bottom: 48px;
     }
 
     .products {
@@ -143,13 +154,10 @@
 }
 
 /* Small Devices, Tablets */
-@media only screen and (max-width: 768px) {
-}
+@media only screen and (max-width: 768px) {}
 
 /* Extra Small Devices, Phones */
-@media only screen and (max-width: 480px) {
-}
+@media only screen and (max-width: 480px) {}
 
 /* Custom, iPhone Retina */
-@media only screen and (max-width: 320px) {
-}
+@media only screen and (max-width: 320px) {}

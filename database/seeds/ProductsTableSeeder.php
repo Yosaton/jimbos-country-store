@@ -12,91 +12,93 @@ class ProductsTableSeeder extends Seeder
      */
     public function run()
     {
-        // Laptops
-        for ($i=1; $i <= 30; $i++) {
+        // Biscuit Mix
+        for ($i=1; $i <= 10; $i++) {
             Product::create([
-                'name' => 'Laptop '.$i,
-                'slug' => 'laptop-'.$i,
-                'details' => [13,14,15][array_rand([13,14,15])] . ' inch, ' . [1, 2, 3][array_rand([1, 2, 3])] .' TB SSD, 32GB RAM',
-                'price' => rand(599, 3999)+.99,
+                'name' => 'Biscuit Mix '.$i,
+                'slug' => 'biscuit-mix-'.$i,
+                // 'details' => [13,14,15][array_rand([13,14,15])] . ' inch, ' . [1, 2, 3][array_rand([1, 2, 3])] .' TB SSD, 32GB RAM',
+                'details' => 'One-of-a-kind biscuit mix!',
+                'price' => rand(9, 49)+.99,
                 'description' =>'Lorem '. $i . ' ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!',
             ])->categories()->attach(1);
         }
 
-        $product = Product::find(1);
-        $product->categories()->attach(2);
+        // $product = Product::find(1);
+        // $product->categories()->attach(2);
 
         // Make Laptop 1 a Desktop as well. Just to test multiple categories
         // $product = Product::find(1);
         // $product->categories()->attach(2);
 
-        // Desktops
+        // Hams
         for ($i = 1; $i <= 9; $i++) {
             Product::create([
-                'name' => 'Desktop ' . $i,
-                'slug' => 'desktop-' . $i,
-                'details' => [24, 25, 27][array_rand([24, 25, 27])] . ' inch, ' . [1, 2, 3][array_rand([1, 2, 3])] . ' TB SSD, 32GB RAM',
-                'price' => rand(599, 3999)+.99,
+                'name' => 'Ham ' . $i,
+                'slug' => 'ham-' . $i,
+                // 'details' => [24, 25, 27][array_rand([24, 25, 27])] . ' inch, ' . [1, 2, 3][array_rand([1, 2, 3])] . ' TB SSD, 32GB RAM',
+                'details' => 'Our spiral sliced ham is precooked and ready to eat in about 30 minutes. Will become a family favorite before you know it!',
+                'price' => rand(9, 49)+.99,
                 'description' => 'Lorem ' . $i . ' ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!',
             ])->categories()->attach(2);
         }
 
-        // Phones
+        // Jams
         for ($i = 1; $i <= 9; $i++) {
             Product::create([
-                'name' => 'Phone ' . $i,
-                'slug' => 'phone-' . $i,
-                'details' => [16, 32, 64][array_rand([16, 32, 64])] . 'GB, 5.' . [7, 8, 9][array_rand([7, 8, 9])] . ' inch screen, 4GHz Quad Core',
-                'price' => rand(599, 3999)+.99,
+                'name' => 'Jam ' . $i,
+                'slug' => 'jam-' . $i,
+                'details' => ['Peach', 'Strawberry', 'Blackberry', 'Apple'][array_rand(['Peach', 'Strawberry', 'Blackberry', 'Apple'])] . ' Flavor',
+                'price' => rand(9, 49)+.99,
                 'description' => 'Lorem ' . $i . ' ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!',
             ])->categories()->attach(3);
         }
 
-        // Tablets
+        // Moonshine
         for ($i = 1; $i <= 9; $i++) {
             Product::create([
-                'name' => 'Tablet ' . $i,
-                'slug' => 'tablet-' . $i,
-                'details' => [16, 32, 64][array_rand([16, 32, 64])] . 'GB, 5.' . [10, 11, 12][array_rand([10, 11, 12])] . ' inch screen, 4GHz Quad Core',
-                'price' => rand(599, 3999)+.99,
+                'name' => 'Moonshine ' . $i,
+                'slug' => 'moonshine-' . $i,
+                'details' => ['Original', 'Cherry Pie', 'Apple Pie', 'Peach Cobbler', 'Pumpkin Pie'][array_rand(['Original', 'Cherry Pie', 'Apple Pie', 'Peach Cobbler', 'Pumpkin Pie'])] . ' Flavor',
+                'price' => rand(9, 49)+.99,
                 'description' => 'Lorem ' . $i . ' ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!',
             ])->categories()->attach(4);
         }
 
-        // TVs
+        // /Bacon
         for ($i = 1; $i <= 9; $i++) {
             Product::create([
-                'name' => 'TV ' . $i,
-                'slug' => 'tv-' . $i,
-                'details' => [46, 50, 60][array_rand([7, 8, 9])] . ' inch screen, Smart TV, 4K',
-                'price' => rand(599, 3999)+.99,
+                'name' => 'Bacon ' . $i,
+                'slug' => 'bacon-' . $i,
+                'details' => ['Maple', 'Applewood Smoked', 'Cajun', 'Peppered'][array_rand(['Maple', 'Applewood Smoked', 'Cajun', 'Peppered'])] . ' Flavor',
+                'price' => rand(9, 49)+.99,
                 'description' => 'Lorem ' . $i . ' ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!',
             ])->categories()->attach(5);
         }
 
-        // Cameras
+        // Coffee Mugs
         for ($i = 1; $i <= 9; $i++) {
             Product::create([
-                'name' => 'Camera ' . $i,
-                'slug' => 'camera-' . $i,
-                'details' => 'Full Frame DSLR, with 18-55mm kit lens.',
-                'price' => rand(599, 3999)+.99,
+                'name' => 'Coffee Mug ' . $i,
+                'slug' => 'coffee-mug-' . $i,
+                'details' => 'Perfect for sippin\' tea or coffee at home!',
+                'price' => rand(5, 20)+.99,
                 'description' => 'Lorem ' . $i . ' ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!',
             ])->categories()->attach(6);
         }
 
-        // Appliances
+        // T-shirts
         for ($i = 1; $i <= 9; $i++) {
             Product::create([
-                'name' => 'Appliance ' . $i,
-                'slug' => 'appliance-' . $i,
-                'details' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, dolorum!',
-                'price' => rand(599, 3999)+.99,
+                'name' => 'T-shirt  ' . $i,
+                'slug' => 't-shirt-' . $i,
+                'details' => 'Made from 100% cotton. Team Jimbo!',
+                'price' => rand(9, 29)+.99,
                 'description' => 'Lorem ' . $i . ' ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!',
             ])->categories()->attach(7);
         }
 
         // Select random entries to be featured
-        // Product::whereIn('id', [1, 12, 22, 31, 41, 43, 47, 51, 53,61, 69, 73, 80])->update(['featured' => true]);
+        Product::whereIn('id', [1, 5, 12, 22, 31, 49, 56, 63, 27 , 42, 19, 50, 26])->update(['featured' => true]);
     }
 }

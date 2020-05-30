@@ -1,11 +1,17 @@
 body {
-    font-family: 'Roboto', Arial, sans-serif;
+    font-family: 'Rye', cursive, sans-serif;
     font-size: 18px;
     font-weight: 300;
     line-height: 1.6;
 }
 
-h1, h2, .product-section-subtitle, .product-section-price {
+// h1,
+// h2,
+// .product-section-subtitle,
+// .product-section-price,
+.checkout-table,
+.checkout-totals,
+.cart-section {
     font-family: 'Montserrat', Arial, sans-serif;
     font-weight: bold;
 }
@@ -19,21 +25,22 @@ h1.stylish-heading {
     margin-bottom: 60px;
     position: relative;
 
-    &:before, &:after {
-      position: absolute;
-      top: -4px;
-      left: 0;
-      width: 66px;
-      height: 1px;
-      background: $text-color;
-      content: '';
-      display: block;
-  }
+    &:before,
+    &:after {
+        position: absolute;
+        top: -4px;
+        left: 0;
+        width: 66px;
+        height: 1px;
+        background: $text-color;
+        content: '';
+        display: block;
+    }
 
-  &:after {
-    bottom: -14px;
-    top: auto;
-  }
+    &:after {
+        bottom: -14px;
+        top: auto;
+    }
 }
 
 h2 {

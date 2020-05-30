@@ -19,10 +19,8 @@
     <div class="products-section container">
         <div class="sidebar">
             <h3>By Category</h3>
-            {{-- {{dd(request()->category)}} --}}
             <ul>
                 @foreach($categories as $category)
-                    {{-- {{dd($category)}} --}}
                     <li class="{{setActiveCategory($category->slug)}}"><a href="{{route('shop.index', ['category' => $category->slug])}}">{{$category->name}}</a></li>
                 @endforeach
             </ul>
@@ -38,8 +36,8 @@
             <div class="products-header">
                 <h1 class="stylish-heading">{{$categoryName}}</h1>
                 <div>
-                    <strong>Price</strong>
-                    <a href="{{ route('shop.index', ['category'=> request()->category, 'sort' => 'low_high']) }}">Low to High</a>
+                    <strong>Price:</strong>
+                    <a href="{{ route('shop.index', ['category'=> request()->category, 'sort' => 'low_high']) }}">Low to High</a> |
                     <a href="{{ route('shop.index', ['category'=> request()->category, 'sort' => 'high_low']) }}">High to Low</a>
                 </div>
             </div>

@@ -90,7 +90,7 @@
 
             <div class="cart-totals">
                 <div class="cart-totals-left">
-                    Shipping is free because we’re awesome like that.
+                    Free shipping for everyone!
                 </div>
 
                 <div class="cart-totals-right">

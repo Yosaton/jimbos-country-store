@@ -11,16 +11,16 @@
         <header class="with-background">
             <div class="hero container">
                 <div class="hero-copy">
-                    <h1>Laravel Ecommerce Demo</h1>
+                    <h1>Jimbo's Country Store</h1>
                     <p>Includes multiple products, categories, a shopping cart and a checkout system with Stripe integration.</p>
                     <div class="hero-buttons">
                         <a href="#" class="button button-white">Blog Post</a>
-                        <a href="#" class="button button-white">GitHub</a>
+                        <a href="https://github.com/Yosaton/ecommerce-website" class="button button-white">GitHub</a>
                     </div>
                 </div> <!-- end hero-copy -->
 
                 <div class="hero-image">
-                    <img src="img/macbook-pro-laravel.png" alt="hero image">
+                    <img src="img/barn.jpg" alt="hero image">
                 </div> <!-- end hero-image -->
             </div> <!-- end hero -->
         </header>
@@ -28,7 +28,7 @@
         <div class="featured-section">
 
             <div class="container">
-                <h1 class="text-center">Laravel Ecommerce</h1>
+                <h1 class="text-center">Jimbo's Country Store</h1>
 
                 <p class="section-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore vitae nisi, consequuntur illum dolores cumque pariatur quis provident deleniti nesciunt officia est reprehenderit sunt aliquid possimus temporibus enim eum hic.</p>
 
@@ -72,17 +72,17 @@
 
                 <div class="blog-posts">
                     <div class="blog-post" id="blog1">
-                        <a href="#"><img src="/img/blog1.png" alt="Blog Image"></a>
+                        <a href="#"><img src="/img/bacon.jpg" alt="Blog Image"></a>
                         <a href="#"><h2 class="blog-title">Blog Post Title 1</h2></a>
                         <div class="blog-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, tenetur numquam ipsam reiciendis.</div>
                     </div>
                     <div class="blog-post" id="blog2">
-                        <a href="#"><img src="/img/blog2.png" alt="Blog Image"></a>
+                        <a href="#"><img src="/img/music2.jpg" alt="Blog Image"></a>
                         <a href="#"><h2 class="blog-title">Blog Post Title 2</h2></a>
                         <div class="blog-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, tenetur numquam ipsam reiciendis.</div>
                     </div>
                     <div class="blog-post" id="blog3">
-                        <a href="#"><img src="/img/blog3.png" alt="Blog Image"></a>
+                        <a href="#"><img src="/img/music.jpg" alt="Blog Image"></a>
                         <a href="#"><h2 class="blog-title">Blog Post Title 3</h2></a>
                         <div class="blog-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, tenetur numquam ipsam reiciendis.</div>
                     </div>

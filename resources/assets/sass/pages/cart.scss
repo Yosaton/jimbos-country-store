@@ -27,7 +27,7 @@
         }
 
         .cart-table-row-left {
-            width: 50%;
+            // width: 50%;
         }
 
         .cart-table-row-right {
@@ -37,6 +37,8 @@
 
         .cart-table-img {
             max-height: 75px;
+            max-width: 75px;
+            margin-right: 50px;
         }
 
         .cart-table-actions {
@@ -50,6 +52,7 @@
 
         .cart-table-description {
             color: $text-color-light;
+            font-weight: normal;
         }
 
         .cart-options {

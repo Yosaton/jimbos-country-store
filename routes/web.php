@@ -22,6 +22,8 @@ Route::post('/checkout', 'CheckoutController@store')->name('checkout.store');
 
 Route::get('/thankyou', 'ConfirmationController@index')->name('confirmation.index');
 
+Route::view('/about', 'about');
+
 
 
 Route::view('/product', 'product');

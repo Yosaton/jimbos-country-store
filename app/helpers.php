@@ -15,7 +15,8 @@ function presentDate($date)
 
 function setActiveCategory($category, $output = 'active')
 {
-    return request()->category == $category ? $output : '';
+
+    return request()->category === $category ? $output : '';
 }
 
 function productImage($path)

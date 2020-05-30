@@ -197,7 +197,7 @@
             var style = {
             base: {
                 color: '#32325d',
-                fontFamily: '"Roboto", "Helvetica Neue", Helvetica, sans-serif',
+                fontFamily: '"Rye", "Helvetica Neue", Helvetica, sans-serif',
                 fontSmoothing: 'antialiased',
                 fontSize: '16px',
                 '::placeholder': {
